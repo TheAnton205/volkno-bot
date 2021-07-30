@@ -27,11 +27,11 @@ sign_in.click()
 time.sleep(0.5)
 
 email = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[2]/section[1]/div[2]/div/div[1]/div/div[2]/div/div[1]/form/div[1]/div/div/div/input")
-email.send_keys("scamssuck1@gmail.com")
+email.send_keys("user")
 
 time.sleep(0.5)
 password = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[2]/section[1]/div[2]/div/div[1]/div/div[2]/div/div[1]/form/div[2]/div/div/div/input")
-password.send_keys("awesome132")
+password.send_keys("pass")
 
 time.sleep(0.5)
 password.send_keys(Keys.ENTER)
