@@ -1,5 +1,5 @@
 # volkno-bot
-Copyright (C) 2017-2018 **Anthony Sharonov** <tushakasha@gmail.com>
+Copyright (C) 2020-2021 **Anthony Sharonov** <tushakasha@gmail.com>
 
 This file is part of the **volkno-bot** project.
 
