@@ -98,4 +98,6 @@ while True:
     elif (check_xpath("/html/body/div[1]/div/div/div/div[3]/div/div[2]/div[1]/div/div/div[1]/div[2]/a[2]")) == True:
         next_vid = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div[2]/div[1]/div/div/div[1]/div[2]/a[2]")
     else:
+        next = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[1]/div/ul/li[1]/a").click()
+        time.sleep(2)
         init_movie()
