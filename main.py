@@ -46,12 +46,14 @@ def init_movie():
         pyautogui.click(x=528, y=564)
     time.sleep(10)
 
+time.sleep(5)
+
 init_movie()
 
 while True:
 #initialize movie
 
-    time.sleep(5)
+    time.sleep(10)
     #-------------------check for all reactions--------------------
 
     #check for hot-or-not
