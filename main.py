@@ -27,29 +27,31 @@ sign_in.click()
 time.sleep(0.5)
 
 email = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[2]/section[1]/div[2]/div/div[1]/div/div[2]/div/div[1]/form/div[1]/div/div/div/input")
-email.send_keys("user")
+email.send_keys("scamssuck1@gmail.com")
 
 time.sleep(0.5)
 password = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[2]/section[1]/div[2]/div/div[1]/div/div[2]/div/div[1]/form/div[2]/div/div/div/input")
-password.send_keys("pass")
+password.send_keys("awesome132")
 
 time.sleep(0.5)
 password.send_keys(Keys.ENTER)
 
+def init_movie():
+    pyautogui.click(x=600, y=590)
+    time.sleep(2)
+    x = randint(1,2)
+    if x == 1:
+        pyautogui.click(x=528, y=544)
+    if x == 2:
+        pyautogui.click(x=528, y=564)
+    time.sleep(10)
+
+init_movie()
+
 while True:
 #initialize movie
-    def init_movie():
-        pyautogui.click(x=600, y=590)
-        time.sleep(2)
-        x = randint(1,2)
-        if x == 1:
-            pyautogui.click(x=528, y=544)
-        if x == 2:
-            pyautogui.click(x=528, y=564)
-        time.sleep(10)
 
     time.sleep(5)
-    init_movie()
     #-------------------check for all reactions--------------------
 
     #check for hot-or-not
