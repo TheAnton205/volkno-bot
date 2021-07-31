@@ -71,8 +71,8 @@ while True:
 
     time.sleep(10)
     prevFlow = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[1]/div/div[2]/div[2]/span")
-    prevlow = prevFlow.text
-    prevlow = int(prevFlow.replace(',',''))
+    prevFlow = prevFlow.text
+    prevFlow = int(prevFlow.replace(',',''))
     #-------------------check for all reactions--------------------
 
     #check for hot-or-not
