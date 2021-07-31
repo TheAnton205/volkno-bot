@@ -36,24 +36,43 @@ password.send_keys("pass")
 time.sleep(0.5)
 password.send_keys(Keys.ENTER)
 
+counter = 0
+
 def init_movie():
-    pyautogui.click(x=600, y=590)
-    time.sleep(2)
-    x = randint(1,2)
-    if x == 1:
-        pyautogui.click(x=528, y=544)
-    if x == 2:
-        pyautogui.click(x=528, y=564)
-    time.sleep(10)
+    time.sleep(3)
+    Flow = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div[2]/div[1]/div/div[2]/ul/li[2]/div[2]/div[2]")
+    print(Flow.text)
+
+    if Flow.text == "Flow Earned 200":
+        pyautogui.click(x=606, y=640)
+        time.sleep(2)
+        x = randint(1,2)
+        if x == 1:  
+            pyautogui.click(x=520, y=535)
+        time.sleep(10)
+
+    else:
+        pyautogui.click(x=600, y=590)
+        time.sleep(2)
+        x = randint(1,2)
+        if x == 1:
+            pyautogui.click(x=528, y=544)
+        if x == 2:
+            pyautogui.click(x=530, y=530)
+        time.sleep(10)
 
 time.sleep(5)
-
 init_movie()
 
+
 while True:
+
 #initialize movie
 
     time.sleep(10)
+    prevFlow = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[1]/div/div[2]/div[2]/span")
+    prevlow = prevFlow.text
+    prevlow = int(prevFlow.replace(',',''))
     #-------------------check for all reactions--------------------
 
     #check for hot-or-not
@@ -70,6 +89,7 @@ while True:
 
     #--------------------------------------------------------------
     time.sleep(200)
+
 
     demand = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div[2]/div[1]/div/div/div[1]/div[1]/div/div[1]/div/div[2]/div[3]/div/button[1]").click()
     time.sleep(1)
@@ -92,12 +112,25 @@ while True:
 
     rate = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div[2]/div[1]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div[1]/div[4]").click()
 
+    time.sleep(2)
+
+    newFlow = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[1]/div/div[2]/div[2]/span")
+    newlow = newFlow.text
+    newlow = int(newFlow.replace(',',''))
+
+    y = newFlow - prevFlow
+    prevFlow = newFlow
+    print("Current Flow = " + str(newFlow) + ". You gained " + str(y) + " flow.")
+
+    counter += 1
+
     if (check_xpath("/html/body/div[1]/div/div/div/div[3]/div/div[2]/div[1]/div/div/div[1]/div[2]/a[1]")) == True:
         next_round = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div[2]/div[1]/div/div/div[1]/div[2]/a[1]").click()
         time.sleep(5)
     elif (check_xpath("/html/body/div[1]/div/div/div/div[3]/div/div[2]/div[1]/div/div/div[1]/div[2]/a[2]")) == True:
         next_vid = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div[2]/div[1]/div/div/div[1]/div[2]/a[2]")
     else:
-        next = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[1]/div/ul/li[1]/a").click()
+        next = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div[2]/div[1]/div/div/div[2]/div[2]/div[1]/a/img").click()
         time.sleep(2)
-        init_movie()
+
+
