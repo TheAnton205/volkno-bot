@@ -27,7 +27,7 @@ sign_in.click()
 time.sleep(0.5)
 
 email = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[2]/section[1]/div[2]/div/div[1]/div/div[2]/div/div[1]/form/div[1]/div/div/div/input")
-email.send_keys("user")
+email.send_keys("user@gmail.com")
 
 time.sleep(0.5)
 password = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[2]/section[1]/div[2]/div/div[1]/div/div[2]/div/div[1]/form/div[2]/div/div/div/input")
@@ -115,8 +115,8 @@ while True:
     time.sleep(2)
 
     newFlow = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[1]/div/div[2]/div[2]/span")
-    newlow = newFlow.text
-    newlow = int(newFlow.replace(',',''))
+    newFlow = newFlow.text
+    newFlow = int(newFlow.replace(',',''))
 
     y = newFlow - prevFlow
     prevFlow = newFlow
@@ -132,5 +132,3 @@ while True:
     else:
         next = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div/div[2]/div[1]/div/div/div[2]/div[2]/div[1]/a/img").click()
         time.sleep(2)
-
-
